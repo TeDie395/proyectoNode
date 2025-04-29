@@ -25,7 +25,9 @@ const userSchema = new mongoose.Schema({
     default: 'user',
   },
   favouriteFlats: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Flat' }],
+  deletedAt: { type: Date, default: null },
 }, { timestamps: true });
+
 
 const User = mongoose.model('User', userSchema);
 
